@@ -45,14 +45,24 @@ class _MyAppState extends State<MyApp> {
                   fontSize: 18,
                   fontWeight: FontWeight.w600,
                   letterSpacing: 4))),
-      home: PedidosPage(),
+      home: HomePage(),
       routes: {
-        // '/home': (ctx) => HomePage(),
-        '/pedidos': (ctx) => PedidosPage(),
+        // '/': (ctx) => HomePage(),
+        // '/pedidos': (ctx) => PedidosPage(),
       },
       onGenerateRoute: (settings) {
         print(settings.name);
         switch (settings.name) {
+          case "/pedidos":
+            return PageRouteBuilder(
+              pageBuilder: (_, __, ___) => PedidosPage(),
+              transitionDuration: Duration(seconds: 0),
+            );
+          case "/home":
+            return PageRouteBuilder(
+              pageBuilder: (_, __, ___) => HomePage(),
+              transitionDuration: Duration(seconds: 0),
+            );
           case "/restaurante":
             return PageRouteBuilder(
                 transitionsBuilder:
@@ -70,6 +80,7 @@ class _MyAppState extends State<MyApp> {
                   return RestaurantPage();
                 },
                 transitionDuration: const Duration(milliseconds: 300));
+
           case "/prato":
             return PageRouteBuilder(
                 transitionsBuilder:
