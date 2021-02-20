@@ -1,3 +1,4 @@
+import 'package:deliverAppFlutter/pages/prato.dart';
 import 'package:deliverAppFlutter/pages/restaurante.dart';
 import 'package:flutter/material.dart';
 
@@ -37,11 +38,58 @@ class _MyAppState extends State<MyApp> {
                   color: Color(0xFFF3B3F40),
                   fontSize: 22,
                   fontWeight: FontWeight.w600,
+                  letterSpacing: 4),
+              headline2: TextStyle(
+                  color: Color(0xFFF3B3F40),
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600,
                   letterSpacing: 4))),
       home: HomePage(),
       routes: {
-        '/home': (ctx) => HomePage(),
-        '/restaurante': (ctx) => RestaurantPage(),
+        // '/home': (ctx) => HomePage(),
+        // '/restaurante': (ctx) => RestaurantPage(),
+      },
+      onGenerateRoute: (settings) {
+        print(settings.name);
+        switch (settings.name) {
+          case "/restaurante":
+            return PageRouteBuilder(
+                transitionsBuilder:
+                    (context, animation, secondaryAnimation, child) {
+                  animation = CurvedAnimation(
+                      parent: animation, curve: Curves.easeInOut);
+
+                  return SlideTransition(
+                      child: child,
+                      position:
+                          Tween<Offset>(begin: Offset(1, 0), end: Offset(0, 0))
+                              .animate(animation));
+                },
+                pageBuilder: (context, animation, secondaryAnimation) {
+                  return RestaurantPage();
+                },
+                transitionDuration: const Duration(milliseconds: 300));
+          case "/prato":
+            return PageRouteBuilder(
+                transitionsBuilder:
+                    (context, animation, secondaryAnimation, child) {
+                  animation = CurvedAnimation(
+                      parent: animation, curve: Curves.easeInOut);
+
+                  return SlideTransition(
+                      child: child,
+                      position:
+                          Tween<Offset>(begin: Offset(1, 0), end: Offset(0, 0))
+                              .animate(animation));
+                },
+                pageBuilder: (context, animation, secondaryAnimation) {
+                  return PratoPage();
+                },
+                transitionDuration: const Duration(milliseconds: 300));
+          default:
+            return MaterialPageRoute(builder: (context) => Container());
+        }
+        // unknown route
       },
     );
   }
