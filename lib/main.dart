@@ -1,3 +1,4 @@
+import 'package:deliverAppFlutter/pages/restaurante.dart';
 import 'package:flutter/material.dart';
 
 import './pages/home.dart';
@@ -38,7 +39,10 @@ class _MyAppState extends State<MyApp> {
                   fontWeight: FontWeight.w600,
                   letterSpacing: 4))),
       home: HomePage(),
-      routes: {},
+      routes: {
+        '/home': (ctx) => HomePage(),
+        '/restaurante': (ctx) => RestaurantPage(),
+      },
     );
   }
 }

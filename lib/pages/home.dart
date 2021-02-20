@@ -1,8 +1,9 @@
-import 'package:deliverAppFlutter/components/bodyHome.dart';
+import 'package:deliverAppFlutter/components/home/BottomNavigation.dart';
+import 'package:deliverAppFlutter/components/home/bodyHome.dart';
 import 'package:flutter/material.dart';
 
-import '../components/headerHome.dart';
-import '../components/plateTypes.dart';
+import '../components/home/headerHome.dart';
+import '../components/home/plateTypes.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -14,6 +15,7 @@ class HomePage extends StatelessWidget {
           children: [HomeHeader(), PlateTypes(), BodyHeader()],
         ),
       ),
+      bottomNavigationBar: DeliverBottomNav(),
     );
   }
 }
