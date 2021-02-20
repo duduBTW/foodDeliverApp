@@ -1,3 +1,4 @@
+import 'package:deliverAppFlutter/components/bodyHome.dart';
 import 'package:flutter/material.dart';
 
 import '../components/headerHome.dart';
@@ -7,8 +8,11 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [HomeHeader(), PlateTypes()],
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [HomeHeader(), PlateTypes(), BodyHeader()],
+        ),
       ),
     );
   }
