@@ -1,3 +1,4 @@
+import 'package:deliverAppFlutter/pages/pedidos.dart';
 import 'package:deliverAppFlutter/pages/prato.dart';
 import 'package:deliverAppFlutter/pages/restaurante.dart';
 import 'package:flutter/material.dart';
@@ -44,10 +45,10 @@ class _MyAppState extends State<MyApp> {
                   fontSize: 18,
                   fontWeight: FontWeight.w600,
                   letterSpacing: 4))),
-      home: HomePage(),
+      home: PedidosPage(),
       routes: {
         // '/home': (ctx) => HomePage(),
-        // '/restaurante': (ctx) => RestaurantPage(),
+        '/pedidos': (ctx) => PedidosPage(),
       },
       onGenerateRoute: (settings) {
         print(settings.name);

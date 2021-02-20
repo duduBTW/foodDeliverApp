@@ -43,8 +43,8 @@ class StoreItem extends StatelessWidget {
     return GestureDetector(
       onTap: () => redirectRestaurant(context),
       child: Container(
-          height: 90,
-          margin: EdgeInsets.only(bottom: 20),
+          height: 70,
+          margin: EdgeInsets.only(bottom: 30),
           // color: Theme.of(context).colorScheme.primary,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.only(
@@ -65,7 +65,7 @@ class StoreItem extends StatelessWidget {
                 dashColor: Theme.of(context).accentColor,
                 // dashGapColor: Colors.red,
                 direction: Axis.vertical,
-                lineLength: 90,
+                lineLength: 80,
               ),
               SizedBox(
                 width: 20,
